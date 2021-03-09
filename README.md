@@ -45,20 +45,20 @@ So, according to above problem I created  following scala file:-
 
   			def deleteAnUser(id:UUID)
 
-*A service scala class(UserService) in a module(service) it extends the ds trait to override all the 			methods according to need.
+*A service scala class(UserService) in a module(service) it extends the ds trait to override all the methods according to need.
 
 *Four Model scala class in model folder :
 		User.scala, 
 		Admin.scala, 
 		Customer.scala, 
 		Role.scala, 
+		
 			where:
-				-User.scala is an abstract class and parent class of both Admin and 						Customer.
+				-User.scala is an abstract class and parent class of both Admin and Customer.
 
 				-Admin and customer both are case classes.
 
-				-Role.scala is object class extend 					 Enumration to give the certain 				
-				 choices
+				-Role.scala is object class extend Enumration to give the certain choices
 
 *A Main class in the MAin folder to run the methods.  				
 
