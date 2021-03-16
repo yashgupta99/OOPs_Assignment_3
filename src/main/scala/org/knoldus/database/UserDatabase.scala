@@ -27,8 +27,8 @@ class UserDatabase extends Dao[User]{
     else false
   }
 
-  override def listAllUser(): ListBuffer[User] = {
-    user_database
+  override def listAllUser(): List[User] = {
+    user_database.toList
   }
 
   override def updateUser(oldUser : User, newUser : User): Boolean = {
@@ -52,12 +52,10 @@ class UserDatabase extends Dao[User]{
       } match {
         case Success(_) => true
         case Failure(exception) =>
-          println(newName + exception)
           false
       }
     }
     else {
-      println("els"+newName)
       false
     }
   }
@@ -85,5 +83,10 @@ class UserDatabase extends Dao[User]{
       case Success(_) => true
       case Failure(_) =>false
     }
+  }
+
+  override def getUserById(id: UUID): User = {
+    if(user_index.contains(id)) user_index(id)
+    else null
   }
 }

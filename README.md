@@ -1,4 +1,4 @@
-# OOPs_Assignment_3
+# OOPs_Assignment_3 & Testing Assignment
 
 In this project I solved the problem which is :
 
@@ -18,49 +18,49 @@ b. List all user
 c. Update UserName of Admin
 d. Delete Customer
 
-So, according to above problem I created  following scala file:-
+So, according to above problem I created  User management System which has following structure:-
 
-*A Trait class(dc.scala) in data folder to implement the abstract methods:-
-			var list: List[User] = List()
+=>src
+	main
+		scala
+			org
+				knoldus
+					bootstrap
+						-Main.class
+					databse
+						-UserDatabase.scala
+					model
+						-User.Scala
+						-UserType.scala
+					repository
+						dao
+							-Dao.scala
+					Service
+						-UserService.scala
+	test
+		scala
+			org
+				knoldus
+					database
+						-UserDatabaseTest.scala
+					service
+						-UserServiceUnitTest
+						-UserServiceIntegrationTest
 
-  			var map:Map[String, User] = Map()
+where every scala class doing its job.
 
-  			def createUser(obj : Admin):Boolean
+For the Testing coverage I used the scoverage plugin
 
-  			def getUUID(obj : Admin):UUID
+the result by the scoverage :-
 
-  			def getUser(obj : Admin): String
-	
-			def getUser(id : UUID): User
+[info] Statement coverage.: 91.23%
+[info] Branch coverage....: 85.00%
+[info] Coverage reports completed
+[info] All done. Coverage was [91.23%]
+ 
 
-  			def createUser(obj : Customer):Boolean
 
-  			def getUUID(obj : Customer):UUID
 
-  			def getUser(obj : Customer): String
-
-  			def listAllUser():Unit
-
-  			def updateNameOfAnUser(id:UUID,uName:String)
-
-  			def deleteAnUser(id:UUID)
-
-*A service scala class(UserService) in a module(service) it extends the ds trait to override all the methods according to need.
-
-*Four Model scala class in model folder :
-		User.scala, 
-		Admin.scala, 
-		Customer.scala, 
-		Role.scala, 
-		
-			where:
-				-User.scala is an abstract class and parent class of both Admin and Customer.
-
-				-Admin and customer both are case classes.
-
-				-Role.scala is object class extend Enumration to give the certain choices
-
-*A Main class in the MAin folder to run the methods.  				
 
 
 			 

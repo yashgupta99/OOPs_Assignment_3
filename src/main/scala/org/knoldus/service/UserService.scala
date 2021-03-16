@@ -14,7 +14,7 @@ class UserService(userDatabase: Dao[User]){
     else false
   }
 
-  def getAllUser(): ListBuffer[User] ={
+  def getAllUser(): List[User] ={
     userDatabase.listAllUser()
   }
 
@@ -30,7 +30,6 @@ class UserService(userDatabase: Dao[User]){
       userDatabase.updateUserName(user,newName)
     }
     else {
-      println("newName = " + newName)
       false
     }
   }
@@ -45,5 +44,9 @@ class UserService(userDatabase: Dao[User]){
   def deleteUser(user : User) : Boolean={
     if(userDatabase.deleteUser(user)) true
     else false
+  }
+
+  def getById(id:UUID): User ={
+    userDatabase.getUserById(id)
   }
 }
